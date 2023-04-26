@@ -28,9 +28,8 @@ int contarChar(int tam)//tamano de argv[i]
 {
 	int cant;
 
-	for (int i=0;i<tam+1;i++){
+	for (int i=0;i<tam+1;i++)
 		cant+=1;
-	}
 	return cant;
 }
 
@@ -69,10 +68,7 @@ void encriptar(char *sms,char *numEncrip)//recibe argv[i+1],argv[i]
 
 int main(int argc, char **argv)
 {
-	if (verNum(argv[2])==1)//verifica codigo
-	{
-		return 0;
-	}
+	if (verNum(argv[2])==1)	return 0;
 	if(contarChar(strlen(argv[2]))!=contarChar(strlen(argv[3])))//verifica tama;o
 	{
 		printf("num clave != num sms\n");
