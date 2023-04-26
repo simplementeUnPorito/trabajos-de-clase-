@@ -54,8 +54,7 @@ void encriptar(char *sms,char *numEncrip)//recibe argv[i+1],argv[i]
     int tam = strlen(sms);//ingresa el tamano de sms
     char a[tam + 1];//crea vector para imprimir mensaje codificado
     for (int i = 0; i < tam; i++) {
-        int b = atoi(sms[i]) + atoi(numEncrip[i]);//se usa una variable de bandera para almacenar la suma de los caracteres
-        a[i]='b';//se asigna el nuevo caracter a la posicion correspondiente
+        a[i]= sms[i] + atoi(numEncrip[i]);//se pueden sumar caracteres con numeros
     }
     printf("el mensaje encriptado queda %s:\b",a);
 }
