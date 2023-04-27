@@ -45,7 +45,10 @@ void desencriptar(char *sms, char *numEncrip)
 	//Aquí se implementa el código para desencriptar
 }
 
-char* transString(char* arr) 
+/*
+ * funcion que convierte un array de caracteres en un string
+ */
+char* transString(char* arr)
 {
     int length = strlen(arr);
     char* str = (char*)malloc(length + 1); // reservar memoria para la cadena
@@ -65,11 +68,14 @@ char* transString(char* arr)
 void encriptar(char *sms, char *numEncrip) //recibe argv[i+1], argv[i]
 {
 	char *str=transString(numEncrip);
+	char *ban=str;
     int tam = strlen(sms); //ingresa el tamaño de sms
     char a[tam + 1]; //crea vector para imprimir mensaje codificado
 
-    for (int i = 0; i < tam; i++) {
-        a[i]= sms[i] + atoi(str) ; //se pueden sumar caracteres con números
+    for (int i = 0; i < tam; i++)
+    {
+		printf("%s,%s",sms[i],ban[i])//rificar valores 
+        a[i]= sms[i] + ban[i] ; //se pueden sumar caracteres con números
     }
 
     printf("El mensaje encriptado queda: %s\n", a);
@@ -86,6 +92,7 @@ void encriptar(char *sms, char *numEncrip) //recibe argv[i+1], argv[i]
 int main(int argc, char **argv)
 {
 	if (verNum(argv[2])==1) return 0;
+	printf("%s,%s",argv[2],argv[3]);//para verificar valores 
 	if (contarChar(strlen(argv[2]))!=contarChar(strlen(argv[3]))) //verifica tamaño
 	{
 		printf("Número de clave diferente al número de mensaje\n");
